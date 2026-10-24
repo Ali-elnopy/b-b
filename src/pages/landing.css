@@ -1,0 +1,410 @@
+/* Provisional palette: sample from the official logo and confirm values with the client */
+.lp-root {
+  --lp-green: #0b5e55;
+  --lp-deep: #06322d;
+  --lp-paper: #f7f0f0;
+  --lp-black: #000;
+  --lp-red: #c8372d;
+}
+
+.lp-root * {
+  box-sizing: border-box;
+}
+
+.lp-root {
+  margin: 0;
+  font-family: "IBM Plex Sans Arabic", system-ui, sans-serif;
+  background: var(--lp-paper);
+  color: var(--lp-black);
+  line-height: 1.7;
+}
+
+.lp-root h1,
+.lp-root h2 {
+  font-family: "Aref Ruqaa", serif;
+  margin: 0;
+  font-weight: 700;
+}
+
+.lp-root a {
+  color: inherit;
+}
+
+.lp-root :focus-visible {
+  outline: 3px solid var(--lp-red);
+  outline-offset: 3px;
+}
+
+/* hero */
+.lp-hero {
+  position: relative;
+  min-height: 100svh;
+  background: var(--lp-green);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: 1.25rem clamp(1rem, 4vw, 3rem) 2rem;
+}
+
+.lp-screen {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.lp-top {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.lp-top .lp-tiny {
+  font-family: "Aref Ruqaa";
+  font-size: 1.6rem;
+  margin-inline-end: auto;
+}
+
+.lp-top a {
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.lp-pill {
+  border: 1.5px solid #fff;
+  border-radius: 99px;
+  padding: 0.35rem 1.1rem;
+}
+
+.lp-pill:hover {
+  background: #fff;
+  color: var(--lp-green);
+}
+
+.lp-stage {
+  position: relative;
+  text-align: center;
+  pointer-events: none;
+}
+
+.lp-mark {
+  display: grid;
+  font-size: clamp(5.5rem, 25vw, 22rem);
+  line-height: 1.15;
+}
+
+.lp-mark span {
+  grid-area: 1/1;
+  white-space: nowrap;
+}
+
+.lp-m {
+  animation: lp-sweep 1.2s cubic-bezier(0.65, 0, 0.2, 1) 0.2s both;
+}
+
+.lp-g {
+  opacity: 0.9;
+  mix-blend-mode: multiply;
+}
+
+.lp-g1 {
+  color: var(--lp-black);
+  transform: translate(4px, 3px);
+  animation: lp-a 1.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s both;
+}
+
+.lp-g2 {
+  color: var(--lp-red);
+  transform: translate(-4px, 3px);
+  animation: lp-b 1.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s both;
+}
+
+.lp-tag {
+  margin: 0.5rem 0 0;
+  font-size: clamp(1.1rem, 2.4vw, 1.7rem);
+  animation: lp-rise 0.8s ease 1.3s both;
+}
+
+.lp-ctas {
+  position: relative;
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  animation: lp-rise 0.8s ease 1.5s both;
+}
+
+.lp-btn {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  border: 1.5px solid currentColor;
+  border-radius: 99px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s;
+}
+
+.lp-btn--solid {
+  background: #fff;
+  color: var(--lp-green);
+  border-color: #fff;
+}
+
+.lp-btn:hover {
+  background: #fff;
+  color: var(--lp-green);
+}
+
+.lp-btn--solid:hover {
+  background: var(--lp-black);
+  color: #fff;
+  border-color: var(--lp-black);
+}
+
+@keyframes lp-sweep {
+  from {
+    clip-path: inset(-10% 0 -10% 100%);
+  }
+  to {
+    clip-path: inset(-10% 0 -10% 0);
+  }
+}
+
+@keyframes lp-a {
+  from {
+    transform: translate(34px, 24px);
+    opacity: 0;
+  }
+  35% {
+    opacity: 0.9;
+  }
+}
+
+@keyframes lp-b {
+  from {
+    transform: translate(-30px, 20px);
+    opacity: 0;
+  }
+  35% {
+    opacity: 0.9;
+  }
+}
+
+@keyframes lp-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+}
+
+/* press scene */
+.lp-press {
+  height: 320vh;
+  background: var(--lp-deep);
+  color: #fff;
+  --plate: 0;
+  --ink: 0;
+}
+
+.lp-sticky {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 2rem;
+  padding: 0 clamp(1rem, 5vw, 4rem);
+}
+
+.lp-copy h2 {
+  font-size: clamp(2rem, 4.5vw, 3.8rem);
+  line-height: 1.3;
+  margin-bottom: 1.5rem;
+}
+
+.lp-copy ol {
+  list-style: none;
+  margin: 0 0 2rem;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.lp-copy li {
+  display: flex;
+  gap: 1rem;
+  opacity: 0.3;
+  transition: opacity 0.3s;
+}
+
+.lp-copy li b {
+  font-family: "Aref Ruqaa";
+  font-size: 2rem;
+  width: 2.4rem;
+  height: 2.4rem;
+  line-height: 2.4rem;
+  text-align: center;
+  border: 1.5px solid currentColor;
+  border-radius: 50%;
+  flex: none;
+}
+
+.lp-copy li p {
+  margin: 0;
+  opacity: 0.8;
+}
+
+.lp-copy li strong {
+  font-size: 1.15rem;
+}
+
+.lp-press[data-step="0"] li:nth-child(1),
+.lp-press[data-step="1"] li:nth-child(2),
+.lp-press[data-step="2"] li:nth-child(3),
+.lp-press[data-step="3"] li:nth-child(4) {
+  opacity: 1;
+}
+
+.lp-tee {
+  width: 100%;
+  max-height: 78svh;
+  justify-self: center;
+}
+
+.lp-ink {
+  fill: #fff;
+  font-family: "Aref Ruqaa";
+  opacity: var(--ink);
+  transform: translateY(calc((1 - var(--ink)) * 6px));
+}
+
+.lp-plate {
+  transform: translateY(calc((1 - var(--plate)) * -170px));
+  opacity: min(1, calc(var(--plate) * 4));
+  fill: #2a2a2a;
+  filter: drop-shadow(0 0 calc(var(--plate) * 14px) var(--lp-red));
+}
+
+.lp-plate-face {
+  fill: var(--lp-red);
+}
+
+/* services */
+.lp-services {
+  padding: clamp(3rem, 8vw, 6rem) clamp(1rem, 5vw, 4rem);
+}
+
+.lp-services h2 {
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  margin-bottom: 1.5rem;
+}
+
+.lp-services ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 2px solid var(--lp-black);
+}
+
+.lp-services a {
+  position: relative;
+  display: block;
+  padding: 1rem 0.5rem;
+  border-bottom: 2px solid var(--lp-black);
+  font-family: "Aref Ruqaa";
+  font-weight: 700;
+  font-size: clamp(1.9rem, 5.5vw, 4rem);
+  line-height: 1.3;
+  text-decoration: none;
+  overflow: hidden;
+  transition: background 0.25s, color 0.25s, padding 0.25s;
+}
+
+.lp-services a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, #fff 2px, transparent 2.5px) 0 0/16px 16px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.lp-services a:hover,
+.lp-services a:focus-visible {
+  background: var(--lp-green);
+  color: #fff;
+  padding-inline-start: 2rem;
+}
+
+.lp-services a:hover::before,
+.lp-services a:focus-visible::before {
+  opacity: 0.22;
+}
+
+.lp-services small {
+  display: block;
+  margin-top: 1rem;
+  opacity: 0.65;
+}
+
+.lp-foot {
+  background: var(--lp-black);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 2rem clamp(1rem, 5vw, 4rem);
+}
+
+.lp-foot p {
+  margin: 0;
+}
+
+@media (max-width: 820px) {
+  .lp-sticky {
+    grid-template-columns: 1fr;
+    align-content: center;
+    gap: 0.5rem;
+  }
+
+  .lp-tee {
+    max-height: 34svh;
+    order: -1;
+  }
+
+  .lp-copy ol {
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .lp-copy li p {
+    display: none;
+  }
+
+  .lp-copy h2 {
+    font-size: 1.7rem;
+    margin-bottom: 0.8rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lp-root * {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .lp-press {
+    height: auto;
+  }
+
+  .lp-sticky {
+    position: static;
+    height: auto;
+    padding-block: 4rem;
+  }
+}

@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 
 import SiteLayout from "./components/SiteLayout.jsx";
+import LandingPage from "./pages/LandingPage.jsx";
 import HomePage from "./pages/HomePage.jsx";
 import ServicesPage from "./pages/ServicesPage.jsx";
 import ServiceDetailPage from "./pages/ServiceDetailPage.jsx";
@@ -26,8 +27,10 @@ import AdminAuditPage from "./admin/AdminAuditPage.jsx";
 export default function App() {
   return (
     <Routes>
+      <Route path="/" element={<LandingPage />} />
+
       <Route element={<SiteLayout />}>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/home" element={<HomePage />} />
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/services/:slug" element={<ServiceDetailPage />} />
         {/* <Route path="/portfolio" element={<PortfolioPage />} /> */}
