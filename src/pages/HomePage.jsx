@@ -113,7 +113,7 @@ export default function HomePage() {
 
           <div className="hero-stage">
             <div className="hero-photo">
-              <img src="/media/hero-press.webp" alt="طباعة وتخصيص في يوزرسيف" />
+              <img src="/media/palestinian-heritage-hero.png" alt="طباعة وتخصيص في يوزرسيف" />
               <div className="hero-photo__caption">
                 <div>
                   <strong>من الفكرة للتنفيذ</strong>
