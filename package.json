@@ -1,0 +1,29 @@
+{
+  "name": "yozersaf",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "موقع يوزرسيف للطباعة والهدايا — موقع طلبات ولوحة تحكم",
+  "scripts": {
+    "dev": "concurrently -n API,WEB -c green,cyan \"npm:dev:api\" \"npm:dev:web\"",
+    "dev:api": "node --watch server/index.js",
+    "dev:web": "vite",
+    "build": "vite build",
+    "start": "node server/index.js",
+    "seed": "node server/seed.js --force",
+    "test": "node --test",
+    "media": "node scripts/build-media.mjs"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.6.0",
+    "sharp": "^0.34.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.6.0",
+    "concurrently": "^9.2.0",
+    "vite": "^6.4.0"
+  }
+}
